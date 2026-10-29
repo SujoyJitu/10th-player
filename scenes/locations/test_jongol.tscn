@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://banjeijsf5al5"]
+
+[ext_resource type="Script" uid="uid://cthd3pu7ytapr" path="res://scripts/core/TestJongol.gd" id="1_sadkl"]
+[ext_resource type="Texture2D" uid="uid://qxviqrddjtf7" path="res://assets/backgrounds/jongol.webp" id="2_ly038"]
+
+[node name="TestJongol" type="Node2D" unique_id=1737052722]
+script = ExtResource("1_sadkl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1190547549]
+position = Vector2(624, 416)
+texture = ExtResource("2_ly038")

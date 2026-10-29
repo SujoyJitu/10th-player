@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameState="*uid://bnbh3bdxafp1r"
+DialogueManager="*uid://byosxyfh64e2n"
 
 [display]
 
