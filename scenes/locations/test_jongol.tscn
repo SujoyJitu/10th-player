@@ -11,15 +11,16 @@ size = Vector2(300, 180)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k56px"]
 size = Vector2(300, 200)
 
-[sub_resource type="Gradient" id="Gradient_m64jc"]
+[sub_resource type="Gradient" id="Gradient_wg41o"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wp5od"]
-gradient = SubResource("Gradient_m64jc")
+gradient = SubResource("Gradient_wg41o")
 width = 512
 height = 512
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
+fill_to = Vector2(0.48293516, 0)
 
 [node name="TestJongol" type="Node2D" unique_id=1737052722]
 script = ExtResource("1_sadkl")
@@ -48,6 +49,7 @@ shape = SubResource("RectangleShape2D_k56px")
 color = Color(0.2509804, 0.2509804, 0.3019608, 1)
 
 [node name="Torch" type="PointLight2D" parent="." unique_id=924829886]
+position = Vector2(476, 665)
 texture = SubResource("GradientTexture2D_wp5od")
-texture_scale = 0.4
+texture_scale = 0.8
 script = ExtResource("4_ws47t")
