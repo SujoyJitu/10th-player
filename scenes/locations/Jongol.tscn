@@ -39,7 +39,7 @@ shape = SubResource("RectangleShape2D_wp5od")
 
 [node name="Hotspot_gate" type="Area2D" parent="." unique_id=390666654]
 script = ExtResource("3_flcb3")
-id = "gate"
+id = "path"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hotspot_gate" unique_id=2146177566]
 position = Vector2(625, 420)

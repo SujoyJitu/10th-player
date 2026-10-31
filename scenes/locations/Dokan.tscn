@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://8n6hdhndju5q"]
+
+[ext_resource type="Script" uid="uid://byq1ulop30p1i" path="res://scripts/core/Dokan.gd" id="1_npach"]
+[ext_resource type="Texture2D" uid="uid://oqd0rmg82wdq" path="res://assets/backgrounds/dokan.webp" id="2_dkmvj"]
+[ext_resource type="Script" uid="uid://6f25dh8xdhgw" path="res://scripts/core/Torch.gd" id="3_6xjxr"]
+[ext_resource type="Script" uid="uid://bo0sdsvyw4jel" path="res://scripts/core/Hotspot.gd" id="4_uy7pl"]
+
+[sub_resource type="Gradient" id="Gradient_wg41o"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_844ps"]
+gradient = SubResource("Gradient_wg41o")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.48293516, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqbac"]
+size = Vector2(330, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1r14"]
+size = Vector2(300, 200)
+
+[node name="Dokan" type="Node2D" unique_id=2054030568]
+script = ExtResource("1_npach")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=738908036]
+position = Vector2(624, 416)
+texture = ExtResource("2_dkmvj")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=899323599]
+color = Color(0.2509804, 0.2509804, 0.3019608, 1)
+
+[node name="Torch" type="PointLight2D" parent="." unique_id=967281732]
+position = Vector2(476, 665)
+texture = SubResource("GradientTexture2D_844ps")
+texture_scale = 0.8
+script = ExtResource("3_6xjxr")
+
+[node name="Hotspot_avi" type="Area2D" parent="." unique_id=1116612220]
+script = ExtResource("4_uy7pl")
+id = "path"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hotspot_avi" unique_id=766209228]
+position = Vector2(740, 520)
+shape = SubResource("RectangleShape2D_bqbac")
+
+[node name="Hotspot_gate" type="Area2D" parent="Hotspot_avi" unique_id=1170296518]
+script = ExtResource("4_uy7pl")
+id = "path"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hotspot_avi/Hotspot_gate" unique_id=1461033894]
+position = Vector2(1100, 640)
+shape = SubResource("RectangleShape2D_q1r14")

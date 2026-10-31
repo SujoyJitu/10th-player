@@ -5,6 +5,8 @@ signal finished
 var lines := []
 var idx := 0
 var typing_tween: Tween
+signal chosen(i)
+var choice_box: VBoxContainer
 
 @onready var box = $Box
 @onready var portrait = $Box/Portrait
@@ -14,6 +16,10 @@ var typing_tween: Tween
 
 func _ready():
 	box.hide()
+	choice_box = VBoxContainer.new()
+	choice_box.position = Vector2(324, 260)
+	add_child(choice_box)
+	choice_box.hide()
 
 
 func play(data: Array):
@@ -55,4 +61,24 @@ func _input(e):
 			text_label.visible_ratio = 1.0
 		else:
 			idx += 1
-			_show_line()
+			_show_line()	
+func choose(options: Array):
+	print('CHOOSE CALLED: ', options)
+	for c in choice_box.get_children():
+		c.queue_free()
+	for i in options.size():
+		var b = Button.new()
+		b.text = options[i]
+		b.custom_minimum_size = Vector2(600, 56)
+		b.add_theme_font_size_override('font_size', 22)
+		b.pressed.connect(_on_choice.bind(i))
+		choice_box.add_child(b)
+	choice_box.show()
+	var r = await chosen
+	return r
+	
+func _on_choice(i):
+	choice_box.hide()
+	for c in choice_box.get_children():
+		c.queue_free()
+	chosen.emit(i)

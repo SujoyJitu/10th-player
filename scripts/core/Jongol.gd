@@ -15,7 +15,8 @@ func on_hotspot(id):
 				{'who':'pritam','mood':'calm','text':'12 jora. Aro ekta ekla juta.'},
 				{'who':'waafe','mood':'uneasy','text':'Eta prank noy. Juta gulo purono.'},
 			])
-		'gate':
-			say([
-				{'who':'mong','mood':'calm','text':'Gate bondho. Code lagbe.'},
+		'path':
+			await say([
+				{'who':'sujoy','mood':'calm','text':'Oi dike alo dekha jachche. Chol, dekhi.'},
 			])
+			SceneRouter.go('res://scenes/locations/Dokan.tscn')
